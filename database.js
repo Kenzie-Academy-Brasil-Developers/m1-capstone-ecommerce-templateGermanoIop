@@ -7,7 +7,7 @@ const data = [
     nameItem: "Lightweight Jacket",
     description:
       "Adicione um pouco de energia ao seu guarda-roupa de inverno com esta jaqueta vibrante...",
-    value: 100,
+    value: 190,
     addCart: "Adicionar ao carrinho",
     tag: ["Camisetas"],
   },
@@ -37,7 +37,7 @@ const data = [
     nameItem: "T-Shirt",
     description:
       "Esta t-shirt é imprescindível no seu guarda-roupa, combinando o caimento intemporal de...",
-    value: 100,
+    value: 115,
     addCart: "Adicionar ao carrinho",
     tag: ["Camisetas"],
   },
@@ -47,7 +47,7 @@ const data = [
     nameItem: "Short-Sleeve T-Shirt",
     description:
       "Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um mais grosso...",
-    value: 100,
+    value: 110,
     addCart: "Adicionar ao carrinho",
     tag: ["Camisetas"],
   },
@@ -57,7 +57,7 @@ const data = [
     nameItem: "Champion Packable Jacket",
     description:
       "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
-    value: 100,
+    value: 130,
     addCart: "Adicionar ao carrinho",
     tag: ["Camisetas"],
   },

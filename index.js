@@ -56,14 +56,12 @@ let buttonProdutoadd = document.querySelectorAll(".buttonadd");
 let ulcarrinho = document.querySelector(".ulcarrinho")
 let quantidadeitens = 0 
 let totalvalor = 0
-let total = document.createElement("p")
-let quantidade = document.createElement("p")
+
     
 for (let i=0; i< buttonProdutoadd.length;i++){
     let botao = buttonProdutoadd[i]
     
         botao.addEventListener('click',function(e){
-        e.preventDefault()
         let idbotao = e.target.id
         let id = parseInt(idbotao)
         let produtocomp = procuraProduto(id)
@@ -71,34 +69,43 @@ for (let i=0; i< buttonProdutoadd.length;i++){
          ulcarrinho.appendChild(cardCarrinho)
        
          quantidadeitens++
-        quantidade.innerHTML = "quantidade:" + quantidadeitens
+        
         
         if(quantidadeitens != 0 && quantidadeitens<2){
-            let textoadicioneitens = document.querySelector("#pCarrinho")
-            textoadicioneitens.remove()
-            
-            let carrinhoVazio = document.querySelector("#hCarrinho")
-            carrinhoVazio.remove()
+            let total = document.createElement("p")
+            let quantidade = document.createElement("p")
+            quantidade.id = "idquantidade"
+            total.id = "idtotal" 
+            somatorios.appendChild(quantidade)
+            somatorios.appendChild(total)
+           
+            let newDiv= document.querySelector(".novadiv")
+            newDiv.remove()
         }
+        let teste1= document.querySelector("#idquantidade")
+        let teste2= document.querySelector("#idtotal")
+        teste1.innerHTML = "Quantidade: " + quantidadeitens 
+    
         totalvalor = totalvalor + produtocomp.value
-        total.innerText = "total:R$" + totalvalor
+        teste2.innerText = "Total: R$" + totalvalor.toFixed(2)
         
     } 
     )
 } 
         let somatorios = document.createElement("div")
+        somatorios.classList.add("somat")
        divcarrinho = document.querySelector(".divcarrinho")
-       divcarrinho.appendChild(somatorios)
+      
 
        somatorios.innerText =""
-       quantidade.id = "idquantidade"
+       
        divcarrinho = document.querySelector(".divcarrinho")
-       somatorios.appendChild(quantidade)
+       divcarrinho.appendChild(somatorios)
        divcarrinho.appendChild(somatorios)
 
-       total.id = "idtotal" 
+      
        divcarrinho = document.querySelector(".divcarrinho")
-       somatorios.appendChild(total)
+       
        divcarrinho.appendChild(somatorios)
        
 function procuraProduto(id){
@@ -149,9 +156,6 @@ function criarCardCarrinho(produtocomp,id){
             novaDiv.appendChild(novaH)
             novaDiv.appendChild(novaP)
             ulcarrinho.appendChild(novaDiv)
-        }else {
-            let novaDiv = document.querySelector(".novadiv")
-            novaDiv.remove()
         }
         })
 
